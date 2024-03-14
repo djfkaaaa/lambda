@@ -13,14 +13,15 @@ public class User {
     private String phoneNumber;
     private Long addressId;
     private String job;
-    private double height;
-    private double weight;
+    private String height;
+    private String weight;
 
     @Builder(builderMethodName = "builder")
-    public User(String username, String password,
+    public User(Long id, String username, String password,
                 String name, String phoneNumber,
                 Long addressId, String job,
-                double height, double weight) {
+                String height, String weight) {
+        this.id = id;
         this.username = username;
         this.password = password;
         this.name = name;
@@ -38,12 +39,13 @@ public class User {
     @Override
     public String toString() {
         return "User{\n" +
-                "username='" + username + '\n' +
-                ", password='" + password + '\n' +
-                ", name='" + name + '\n' +
-                ", phoneNumber='" + phoneNumber + '\n' +
-                ", addressId='" + addressId + '\n' +
-                ", job='" + job + '\n' +
+                "id = " + id +
+                ", username = " + username +
+                ", password = " + password +
+                ", name = " + name +
+                ", phoneNumber = " + phoneNumber +
+                ", addressId = " + addressId +
+                ", job = " + job +
                 '}';
     }
 }

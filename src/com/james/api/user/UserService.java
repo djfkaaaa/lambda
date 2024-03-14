@@ -16,6 +16,8 @@ public interface UserService {
     List<?> findUsersByJob(String job);
     Map<String, ?> findUsersByJobFromMap(String job);
     Map<String, ?> getUserMap();
+    List<?> findAll() throws SQLException;
+    public String count();
 
     Messenger putUsers(Scanner scanner) throws SQLException;
 

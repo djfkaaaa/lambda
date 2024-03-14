@@ -9,7 +9,13 @@ public class ArticleController {
         this.service = ArticleServiceImpl.getInstance();
     }
 
-    List<?> findUsers() throws SQLException {
+    public static ArticleController instance = new ArticleController();
+    public static ArticleController getInstance() {
+        return instance;
+    }
+
+
+    public List<?> findUsers() throws SQLException {
         return service.findUsers();
     }
 }

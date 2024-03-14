@@ -31,8 +31,8 @@ public class UserServiceImpl extends AbstractService<User> implements UserServic
     }
 
     @Override
-    public List<User> findAll() {
-        return  new ArrayList<>(users.values());
+    public List<User> findAll() throws SQLException {
+        return repository.findAll();
     }
 
     @Override

@@ -68,6 +68,7 @@ public enum Navigation {
         String s = scanner.next();
         return Stream.of(values()) //Strea.of 는 반환 타입이 Stream<int[]>
                 // ^ values() == navigation.values / enum 요소 전체 하나의 values
+                // values의 값이 배열로 떨어졌기에 Stream 사용 lab-listofisgood클래스 참고
                 .filter(o -> o.string.equals(s)) // 조건 , values 가 조건에 맞다면
                 .findFirst() // 조건에 맞는것 가져오기, 가져오는것은 values 전체 , 조건에 맞지않는것은 다 걸러낸 상태에서 하나 찝어옴
                 .orElse(NAVIGATION_ERROR)
