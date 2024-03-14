@@ -34,18 +34,22 @@ public class UserRepository {
         rs = null;
     }
 
-    public List<?> findUsers() throws SQLException {
-        String sql = "select * from articles";
+    public List<User> findAll() throws SQLException {
+        String sql = "select * from user";
         pstmt = connection.prepareStatement(sql);
         rs = pstmt.executeQuery();
         List<User> ls = new ArrayList<>();
         if (rs.next()){
-            do {System.out.printf("ID : %d\t Title : %s\t Content : %s\t Writer : %s \n",
-                    rs.getInt("id"),
-                    rs.getString("title"),
-                    rs.getString("content"),
-                    rs.getString("writer"));
-                System.out.println();
+            do {ls.add(User.builder()
+                    .id(rs.getLong("id"))
+                    .username(rs.getString("username"))
+                    .password(rs.getString("password"))
+                    .name(rs.getString("name"))
+                    .phoneNumber(rs.getString("phone"))
+                    .job(rs.getString("job"))
+                    .height(rs.getString("height"))
+                    .weight(rs.getString("weight"))
+                    .build());
             }while (rs.next());
         }else {
             System.out.println("데이터가 없습니다.");

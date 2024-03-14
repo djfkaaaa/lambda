@@ -28,7 +28,7 @@ public class UserController {
         return "회원가입 성공";
     }
 
-    public List<User> findAll() {
+    public List<User> findAll() throws SQLException {
         return service.findAll();
     }
 

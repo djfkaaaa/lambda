@@ -62,7 +62,12 @@ public enum UserRouter {
     }),
     LIST("ls",scanner -> {
         System.out.println("===user list===");
-        System.out.println("result : " + UserController.getInstance().findAll());
+        try {
+
+            UserController.getInstance().findAll().forEach(i-> System.out.println(i));
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
         System.out.println("===success===");
         return 1;
     }),

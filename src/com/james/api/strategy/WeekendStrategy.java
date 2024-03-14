@@ -6,14 +6,13 @@ import java.util.function.Function;
 import java.util.stream.Stream;
 
 public enum WeekendStrategy {
-    Monday("i",i->"mon"),
-    Tuesday("i",i->"tue"),
-    Wendsday("i",i->"wed"),
-    Thursday("i",i->"tur"),
-    Friday("i",i->"fri"),
-    Saturday("i",i->"sat"),
-    Sunday("i",i->"sun"),
-
+    Monday("1",i->"mon"),
+    Tuesday("2",i->"tue"),
+    Wendsday("3",i->"wed"),
+    Thursday("4",i->"tur"),
+    Friday("5",i->"fri"),
+    Saturday("6",i->"sat"),
+    Sunday("7",i->"sun"),
     Wrong("i",i->"wrong");
 
     private final String name;
@@ -28,6 +27,7 @@ public enum WeekendStrategy {
         System.out.println("1~7 입력");
         String s = sc.next();
         return Stream.of(values())
+                .filter(i->i.name.equals(s))
                 .findAny().orElseGet(()->Wrong)
                 .function.apply(s);
     }
