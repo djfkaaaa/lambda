@@ -1,7 +1,4 @@
-import com.james.api.enums.Navigation;
-import com.james.api.enums.NavigationC;
-import com.james.api.enums.NavigationP;
-import com.james.api.enums.NavigationS;
+import com.james.api.menu.MenuController;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -10,7 +7,9 @@ import java.util.Scanner;
 public class Main {
     private static final Scanner sc = new Scanner(System.in);
     public static void main(String[] args) throws IOException, SQLException {
-        while (Navigation.navigate(sc) != 0);
+        MenuController.getInstance().makeMenuTable();
+//        while (Navigation.navigate(sc) != 0);
+
 //        while (NavigationP.navigate(sc));
 //        String stringFlag = NavigationS.navigate(sc);
 //        while (!stringFlag.navigate(sc).equals("x"));

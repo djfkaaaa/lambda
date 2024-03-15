@@ -12,6 +12,9 @@ public class AccountController {
         this.accountService = AccountServiceImpl.getInstance();
     }
 
+    public static AccountController instance = new AccountController();
+    public static AccountController getInstance(){return instance;}
+
     public Messenger createAccount(Scanner sc) {
         return accountService.save(Account.builder()
                 .id(sc.nextLong())
