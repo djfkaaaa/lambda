@@ -11,7 +11,7 @@ public enum AccountRouter {
         System.out.println("Exit");
         return 0;
     }),
-    Create("mk",scanner -> {
+    Create("cat",scanner -> {
         System.out.println("create account table");
         AccountController.getInstance().createAccount(scanner);
         return 1;
@@ -21,12 +21,12 @@ public enum AccountRouter {
         AccountController.getInstance().deposit(scanner);
         return 1;
     }),
-    Withdraw("draw",scanner -> {
+    Withdraw("with",scanner -> {
         System.out.println("withdraw");
         AccountController.getInstance().withdraw(scanner);
         return 1;
     }),
-    Getbalance("gb",scanner -> {
+    Getbalance("bal",scanner -> {
         System.out.println("getbalance");
         AccountController.getInstance().getBalance(scanner);
         return 1;
@@ -36,11 +36,15 @@ public enum AccountRouter {
         AccountController.getInstance().delete(scanner);
         return 1;
     }),
-    GetAccount("ga",scanner -> {
+    GetAccount("ls-a",scanner -> {
         System.out.println("getaccount");
         AccountController.getInstance().getAccounts();
         return 1;
     }),
+    CreateTable("touch",scanner -> {
+        System.out.println("create table");
+        return 1;
+    })
     ;
     private final String string;
     private final Function<Scanner,Integer> function;
