@@ -24,4 +24,9 @@ public class MenuController {
     public List<?> getMenusByCategory(String category){
         return ms.getMenusByCategory(category);
     }
+
+
+//    public List<?> makeFoobaar(){
+//        return ms.makeFoobar();
+//    }
 }

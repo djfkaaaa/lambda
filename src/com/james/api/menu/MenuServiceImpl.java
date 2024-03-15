@@ -28,7 +28,14 @@ public List<?> getMenusByCategory(String category){
     return mr.getMenusByCategory(category);
 }
 
-private void insertMenus(){
+
+
+//    @Override
+//    public List<?> makeFoobar() {
+//        return mr.makeFoobar();
+//    }
+
+    private void insertMenus(){
 //    String[] categories = {"navigate", "article", "account", "board", "user", "soccer"};
 //    String[][] menus = {{"x-Exit", "a-Article", "ac-Account", "c-Crawler", "b-board", "u-User"},
 //            {"x-Exit", "ls-List"},
@@ -41,7 +48,7 @@ private void insertMenus(){
 //            {}};
     String[] categories = {"navigate", "user", "account", "article", "board", "soccer"};
     String[][] menus = {{"x", "usr", "acc", "cwl", "art", "bbs","scc"},
-            {"x", "mk", "joi", "log", "cat :", "ch-pw", "rm",
+            {"x", "mk", "joi", "log", "cat ", "ch-pw", "rm",
                     "ls-a", "ls-n", "ls-job", "cnt"},
             {"x", "mk", "touch", "with", "depo", "bal", "rm", "cat", "ls-a"},
             {"x", "mk"},

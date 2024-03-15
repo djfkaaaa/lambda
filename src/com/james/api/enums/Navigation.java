@@ -4,11 +4,13 @@ import com.james.api.account.AccountView;
 import com.james.api.article.ArticleView;
 import com.james.api.board.BoardView;
 import com.james.api.crawler.CrawlerView;
+import com.james.api.menu.MenuController;
 import com.james.api.user.UserView;
 
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.List;
 import java.util.Scanner;
 import java.util.function.Function;
 import java.util.stream.Stream;
@@ -64,7 +66,10 @@ public enum Navigation {
     }
 
     public static Integer navigate(Scanner scanner){
-        System.out.println("x-Exit, a-Article, ac-Account, b-Board, c-Crawler, u-User");
+
+        List<?> ls = MenuController.getInstance().getMenusByCategory("navigate");
+        System.out.println(ls);
+//        System.out.println("x-Exit, a-Article, ac-Account, b-Board, c-Crawler, u-User");
         String s = scanner.next();
         return Stream.of(values()) //Strea.of 는 반환 타입이 Stream<int[]>
                 // ^ values() == navigation.values / enum 요소 전체 하나의 values

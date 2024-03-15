@@ -84,4 +84,24 @@ public class MenuRepository {
         }
         return menus;
     }
+
+
+
+//    public List<?> makeFoobar() {
+//        String sql = "";
+//        pstmt = conn.prepareStatement(sql);
+//        rs = pstmt.executeQuery();
+//        List<?> ls = new ArrayList<>();
+//        if (rs.next()){
+//            do {
+//                Menu m = Menu.builder()
+//                        .item(rs.getString("item"))
+//                        .category(rs.getString("category"))
+//                        .build();
+//            }while (rs.next());
+//        }else {
+//            System.out.println("No Data");
+//        }
+//        return ls;
+//    }
 }
