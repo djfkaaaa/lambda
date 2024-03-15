@@ -65,10 +65,10 @@ public enum Navigation {
         this.function = function;
     }
 
-    public static Integer navigate(Scanner scanner){
+    public static Integer navigate(Scanner scanner) throws SQLException {
 
-        List<?> ls = MenuController.getInstance().getMenusByCategory("navigate");
-        System.out.println(ls);
+        List<?> st = MenuController.getInstance().getMenusByCategory("navigate");
+        System.out.println(st);
 //        System.out.println("x-Exit, a-Article, ac-Account, b-Board, c-Crawler, u-User");
         String s = scanner.next();
         return Stream.of(values()) //Strea.of 는 반환 타입이 Stream<int[]>

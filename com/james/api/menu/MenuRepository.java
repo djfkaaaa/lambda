@@ -6,6 +6,7 @@ import lombok.Getter;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class MenuRepository {
     @Getter
@@ -84,6 +85,24 @@ public class MenuRepository {
         }
         return menus;
     }
+
+    public List<Menu> selectTable() throws SQLException {
+        List<Menu> ls = new ArrayList<>();
+        String sql = "select * from menus where category = 'navigate'";
+        pstmt = conn.prepareStatement(sql);
+        rs = pstmt.executeQuery();
+            if (rs.next()) {
+                do {
+                    ls.add(Menu.builder()
+                            .item(rs.getString("item"))
+                            .build());
+                } while (rs.next());
+            } else {
+                System.out.println("카테고리가 없습니다.");}
+        return ls;
+    }
+
+
 
 
 

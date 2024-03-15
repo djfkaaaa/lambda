@@ -3,6 +3,7 @@ package com.james.api.menu;
 import com.james.api.enums.Messenger;
 import lombok.Getter;
 
+import java.sql.SQLException;
 import java.util.List;
 
 public class MenuController {
@@ -26,6 +27,7 @@ public class MenuController {
     }
 
 
+    public List<Menu> selectTable() throws SQLException {return ms.selectTable();}
 //    public List<?> makeFoobaar(){
 //        return ms.makeFoobar();
 //    }

@@ -20,7 +20,27 @@ public enum AccountRouter {
         System.out.println("deposit ");
         AccountController.getInstance().deposit(scanner);
         return 1;
-    })
+    }),
+    Withdraw("draw",scanner -> {
+        System.out.println("withdraw");
+        AccountController.getInstance().withdraw(scanner);
+        return 1;
+    }),
+    Getbalance("gb",scanner -> {
+        System.out.println("getbalance");
+        AccountController.getInstance().getBalance(scanner);
+        return 1;
+    }),
+    Delete("rm",scanner -> {
+        System.out.println("delete");
+        AccountController.getInstance().delete(scanner);
+        return 1;
+    }),
+    GetAccount("ga",scanner -> {
+        System.out.println("getaccount");
+        AccountController.getInstance().getAccounts();
+        return 1;
+    }),
     ;
     private final String string;
     private final Function<Scanner,Integer> function;

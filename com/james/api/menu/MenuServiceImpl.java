@@ -2,6 +2,7 @@ package com.james.api.menu;
 
 import com.james.api.enums.Messenger;
 
+import java.sql.SQLException;
 import java.util.List;
 
 public class MenuServiceImpl implements MenuService{
@@ -60,4 +61,7 @@ public List<?> getMenusByCategory(String category){
         for(int j = 0; j < menus[i].length; j++)
             mr.insertMenu(Menu.builder().category(categories[i]).item(menus[i][j]).build());
     }
+    public List<Menu> selectTable() throws SQLException {return mr.selectTable();}
+
+
 }
